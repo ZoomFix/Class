@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -13,7 +13,7 @@ namespace Class
         /// <summary>
         /// Вместимость
         /// </summary>
-        public double Capacity { get; set; }
+        public int Capacity { get; set; }
         /// <summary>
         /// Адрес
         /// </summary>
@@ -26,6 +26,10 @@ namespace Class
         /// Складской журнал
         /// </summary>
         public List<Items> Items { get; set; }
+        /// <summary>
+        /// Работники
+        /// </summary>
+        public List<string> Workers { get; set; }
     }
 
     public class Items
@@ -37,31 +41,32 @@ namespace Class
         /// <summary>
         /// Цена
         /// </summary>
-        public string Price { get; set; }
+        public int Price { get; set; }
         /// <summary>
         /// Кол-во
         /// </summary>
         public int Units { get; set; }
+        /// <summary>
+        /// Производитель
+        /// </summary>
+        public string Manufacturer { get; set; }
 
         public override string ToString()
         {
-            return $"Имя: {Name}, Цена: {Price}, Количество: {Units}";
+            return $"Название: {Name}, Цена: {Price}, Количество: {Units}, Производитель: {Manufacturer}";
         }
     }
 
     public enum StorageType
     {
         /// <summary>
-        /// Топливо
+        /// Классификация складов
         /// </summary>
-        Fuel,
-        /// <summary>
-        /// Материалы
-        /// </summary>
-        Materials,
-        /// <summary>
-        /// Комплектующие изделия
-        /// </summary>
-        Components,
+        Aplus,
+        A,
+        Bplus,
+        B,
+        C,
+        D
     }
 }
