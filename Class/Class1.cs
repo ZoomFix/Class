@@ -29,7 +29,28 @@ namespace Class
         /// <summary>
         /// Работники
         /// </summary>
-        public List<string> Workers { get; set; }
+        public List<Workers> Workers { get; set; }
+    }
+    
+    public class Workers
+    {
+        /// <summary>
+        /// Имя
+        /// </summary>
+        public string Name { get; set; }
+        /// <summary>
+        /// Должность
+        /// </summary>
+        public string Position { get; set; }
+        /// <summary>
+        /// Стаж
+        /// </summary>
+        public int Experience { get; set; }
+
+        public override string ToString()
+        {
+            return $"Имя: {Name}, Должность: {Position}, Стаж: {Experience}";
+        }
     }
 
     public class Items
